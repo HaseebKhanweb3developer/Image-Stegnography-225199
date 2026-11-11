@@ -198,7 +198,7 @@ main{position:relative;z-index:2}
 /* polaroids that "develop" */
 .polaroids{display:grid;grid-template-columns:1fr 1fr;gap:26px 16px;align-items:start}
 .polaroid{
-  background:var(--white);padding:10px 10px 0;border-radius:4px;box-shadow:var(--shadow);position:relative;
+  cursor:zoom-in;background:var(--white);padding:10px 10px 0;border-radius:4px;box-shadow:var(--shadow);position:relative;
   --r:-2.5deg;transform:rotate(var(--r));transition:transform .5s var(--spring);
 }
 .polaroid:nth-child(even){--r:2deg;margin-top:34px}
@@ -206,7 +206,7 @@ main{position:relative;z-index:2}
 .polaroid .ph{position:relative;overflow:hidden;border-radius:2px;background:#e9e6ee}
 .polaroid img{width:100%;aspect-ratio:4/5;object-fit:cover;cursor:zoom-in}
 .polaroid .ph::after{ /* developing film layer */
-  content:"";position:absolute;inset:0;background:linear-gradient(160deg,#f4efe6,#e6e1ea);
+  content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(160deg,#f4efe6,#e6e1ea);
   transition:opacity 2.6s ease .3s;
 }
 .polaroid.in .ph::after{opacity:0}

@@ -161,7 +161,8 @@
     show("lightbox");
   }
   document.addEventListener("click", function (e) {
-    var z = e.target.closest("[data-zoom]");
+    var pol = e.target.closest(".polaroid");
+    var z = pol ? pol.querySelector("img") : e.target.closest("[data-zoom]");
     if (z) openLightbox(z.getAttribute("src"), z.getAttribute("data-cap"));
   });
   $("lightbox").onclick = function (e) { if (e.target !== $("lb-img")) $("lightbox").hidden = true; };
