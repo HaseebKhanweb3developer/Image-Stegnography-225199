@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cut">
+<title>For Ammarah</title>
+<meta name="description" content="Something small, made for you.">
+<meta property="og:title" content="For Ammarah 🤍">
+<meta property="og:description" content="Open it at midnight.">
+<meta property="og:image" content="photos/now-6.jpg">
+<meta name="theme-color" content="#efecea">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<!-- 1. Countdown gate (only before midnight) -->
+<section id="gate" class="screen" hidden>
+  <p class="small">psst, Ammarah</p>
+  <h1 class="hand">not yet…</h1>
+  <p>this opens at midnight, on your day.</p>
+  <div class="countdown" aria-live="polite">
+    <div><b id="cd-h">00</b><span>hours</span></div>
+    <div><b id="cd-m">00</b><span>minutes</span></div>
+    <div><b id="cd-s">00</b><span>seconds</span></div>
+  </div>
+  <p class="small muted">keep this tab open. no peeking.</p>
+</section>
+
+<!-- 2. Lock question -->
+<section id="lock" class="screen" hidden>
+  <div class="padlock" aria-hidden="true">
+    <svg viewBox="0 0 64 72" width="56" height="64"><path d="M16 30V20a16 16 0 0 1 32 0v10" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" class="shackle"/><rect x="6" y="30" width="52" height="38" rx="10" fill="currentColor"/><circle cx="32" cy="47" r="5" fill="#efecea"/><rect x="30" y="49" width="4" height="10" rx="2" fill="#efecea"/></svg>
+  </div>
+  <h2 id="lock-q" class="serif"></h2>
+  <div id="lock-options" class="options"></div>
+  <p id="lock-msg" class="hand lock-msg" aria-live="polite"></p>
+</section>
+
+<!-- 3. Envelope -->
+<section id="envelope" class="screen" hidden>
+  <button class="env" id="env-btn" aria-label="Open the envelope">
+    <span class="env-back"></span>
+    <span class="env-card"><span class="hand">Happy Birthday</span></span>
+    <span class="env-front"></span>
+    <span class="env-flap"></span>
+    <span class="seal">A</span>
+  </button>
+  <p class="hand env-to">for Ammarah</p>
+  <p class="small muted">tap to open</p>
+</section>
+
+<!-- 4. The actual site -->
+<main id="site" hidden>
+
+  <header class="hero">
+    <p class="small spaced">12 · 11 · 2005</p>
+    <h1 class="serif">Happy <em>21st</em><br>Birthday,</h1>
+    <p class="hand big-name">Ammarah</p>
+    <figure class="polaroid hero-photo tilt-r">
+      <img src="photos/now-6.jpg" alt="Ammarah">
+    </figure>
+    <p class="scroll-hint small muted">scroll slowly ↓</p>
+  </header>
+
+  <section class="block">
+    <h2 class="serif">Before I knew you</h2>
+    <p class="sub hand">little Ammarah, causing trouble since 2005</p>
+    <div id="childhood" class="board"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="serif">And then she grew up</h2>
+    <p class="sub hand">and became the person I can't stop looking at</p>
+    <div id="now" class="board"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="serif">A letter</h2>
+    <article class="letter">
+      <p class="hand letter-to">Dear Ammarah,</p>
+      <div id="letter-body"></div>
+      <p class="hand letter-from">— yours, Haseeb</p>
+    </article>
+  </section>
+
+  <section class="block">
+    <h2 class="serif">21 reasons</h2>
+    <p class="sub hand">one for every year. tap a card.</p>
+    <div id="reasons" class="reasons"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="serif">21 years, in numbers</h2>
+    <p class="sub hand">i did the maths so you don't have to</p>
+    <div id="facts" class="facts"></div>
+  </section>
+
+  <section class="block cake-block">
+    <h2 class="serif">Make a wish</h2>
+    <p class="sub hand" id="cake-hint">21 candles. tap them out, or blow into your phone.</p>
+    <div class="cake" id="cake">
+      <div class="candles" id="candles"></div>
+      <div class="tier top"></div>
+      <div class="tier bottom"></div>
+      <div class="plate"></div>
+    </div>
+    <button class="btn" id="blow-btn">blow 🌬️</button>
+    <p class="hand wish-done" id="wish-done" hidden>i hope every single one comes true.</p>
+  </section>
+
+  <section class="block ending">
+    <div id="ending-slot"></div>
+    <p class="hand signoff" id="signoff"></p>
+    <p class="small muted">made by hand, by Haseeb, on the night before your birthday.</p>
+  </section>
+
+</main>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
