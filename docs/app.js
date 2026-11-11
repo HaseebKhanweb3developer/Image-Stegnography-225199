@@ -131,7 +131,7 @@
       ["Scorpio", "which explains a few things", ""],
       ["Topaz & citrine", "your birthstones (November)", ""],
       ["Chrysanthemum", "your birth flower", ""],
-      [fmt(Math.max(0, Math.floor((now - met) / 864e5))), "days since 27th April 2026, the best day of my year", "wide"]
+      [fmt(Math.max(0, Math.floor((now - met) / 864e5))), "days since we first met, 27th April 2026", "wide"]
     ];
     $("facts").innerHTML = list.map(function (f) {
       return '<div class="fact reveal ' + f[2] + '"><b>' + f[0] + "</b><span>" + f[1] + "</span></div>";

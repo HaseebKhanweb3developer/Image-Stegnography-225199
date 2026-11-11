@@ -29,22 +29,22 @@ window.CONTENT = {
 
   // Little Ammarah (childhood photos) – write a line under each
   childhood: [
-    { src: "photos/kid-1.jpg", caption: "" },
-    { src: "photos/kid-2.jpg", caption: "" },
-    { src: "photos/kid-3.jpg", caption: "" },
-    { src: "photos/kid-4.jpg", caption: "" }
+    { src: "photos/kid-1.jpg", caption: "My First Baby" },
+    { src: "photos/kid-2.jpg", caption: "Cutest Kid i have ever seen" },
+    { src: "photos/kid-3.jpg", caption: "My favorite photo." },
+    { src: "photos/kid-4.jpg", caption: "Nice moochen 🥸" }
   ],
 
   // Grown-up photos – write a line under each
   now: [
-    { src: "photos/now-1.jpg", caption: "" },
-    { src: "photos/now-2.jpg", caption: "" },
-    { src: "photos/now-3.jpg", caption: "" },
-    { src: "photos/now-4.jpg", caption: "" },
-    { src: "photos/now-5.jpg", caption: "" },
-    { src: "photos/now-6.jpg", caption: "" },
-    { src: "photos/now-7.jpg", caption: "" },
-    { src: "photos/now-8.jpg", caption: "" }
+    { src: "photos/now-1.jpg", caption: "My beautiful girl i love you so much." },
+    { src: "photos/now-2.jpg", caption: "Our first eid after engagement." },
+    { src: "photos/now-3.jpg", caption: "Why are you so cute and masoom ?" },
+    { src: "photos/now-4.jpg", caption: "Your eyes i am so much into them." },
+    { src: "photos/now-5.jpg", caption: "I love this photo as i have framed it." },
+    { src: "photos/now-6.jpg", caption: "Best day of my life 19th april 2026" },
+    { src: "photos/now-7.jpg", caption: "My first baby give me a kiss." },
+    { src: "photos/now-8.jpg", caption: "My wife to be." }
   ],
 
   // The long letter. Leave a blank line between paragraphs.
