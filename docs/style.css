@@ -158,7 +158,7 @@ main{max-width:720px;margin:0 auto;padding:0 16px 80px}
 .letter-to,.letter-from{font-size:1.8rem}
 .letter-from{text-align:right;margin-top:14px}
 #letter-body{font-family:"Caveat",cursive;font-size:1.45rem;line-height:34px;margin-top:6px}
-#letter-body p+p{margin-top:17px}
+#letter-body p+p{margin-top:34px}
 #letter-body .todo{font-size:.85rem;line-height:1.5;padding:18px}
 
 /* reasons */
