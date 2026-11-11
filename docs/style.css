@@ -104,7 +104,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webki
 }
 .env.open .seal{opacity:0}
 .env.open .env-flap{transform:rotateX(180deg);z-index:0}
-.env.open .env-card{transform:translateY(-110px);opacity:1}
+.env.open .env-card{transform:translateY(-118px) rotate(-2deg);opacity:1;z-index:5;box-shadow:0 8px 24px rgba(70,64,80,.18)}
+.env-card .hand{text-align:center;line-height:1.05}
+.env-card small{display:block;font-size:1.3rem;color:var(--ink)}
+body .tap-hint{transition:opacity .3s}
+.opened .tap-hint{opacity:0}
 .env-to{font-size:2.2rem}
 
 /* ── main site ── */

@@ -64,6 +64,7 @@
     show("envelope");
     $("env-btn").onclick = function () {
       this.classList.add("open");
+      $("envelope").classList.add("opened");
       this.onclick = null;
       setTimeout(function () {
         leave("envelope", function () {
@@ -73,7 +74,7 @@
           confetti(160);
           observe();
         });
-      }, 1500);
+      }, 2800);
     };
   }
 
