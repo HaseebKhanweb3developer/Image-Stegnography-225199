@@ -3,7 +3,7 @@
   var C = window.CONTENT;
   var $ = function (id) { return document.getElementById(id); };
   var params = new URLSearchParams(location.search);
-  var preview = params.has("preview"); // add ?preview to the link to skip the countdown while testing
+  var preview = params.has("preview") || location.hash === "#preview" || window.PREVIEW === true; // add ?preview to the link to skip the countdown while testing
 
   function store(k, v) {
     try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; }
