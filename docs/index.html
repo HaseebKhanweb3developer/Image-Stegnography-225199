@@ -2,123 +2,212 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cut">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>For Ammarah</title>
 <meta name="description" content="Something small, made for you.">
 <meta property="og:title" content="For Ammarah 🤍">
 <meta property="og:description" content="Open it at midnight.">
 <meta property="og:image" content="photos/kid-2.jpg">
-<meta name="theme-color" content="#efecea">
+<meta name="theme-color" content="#ecebef">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="locked">
 
-<!-- 1. Countdown gate (only before midnight) -->
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- countdown -->
 <section id="gate" class="screen" hidden>
-  <p class="small">psst, Ammarah</p>
-  <h1 class="hand">not yet…</h1>
-  <p>this opens at midnight, on your day.</p>
+  <p class="eyebrow">psst, Ammarah</p>
+  <h1 class="hand gate-title">not yet…</h1>
+  <p class="gate-sub">this opens at midnight, on your day.</p>
   <div class="countdown" aria-live="polite">
-    <div><b id="cd-h">00</b><span>hours</span></div>
-    <div><b id="cd-m">00</b><span>minutes</span></div>
-    <div><b id="cd-s">00</b><span>seconds</span></div>
+    <div class="cd"><b id="cd-h">00</b><span>hours</span></div>
+    <i>:</i>
+    <div class="cd"><b id="cd-m">00</b><span>minutes</span></div>
+    <i>:</i>
+    <div class="cd"><b id="cd-s">00</b><span>seconds</span></div>
   </div>
-  <p class="small muted">keep this tab open. no peeking.</p>
+  <p class="tiny muted">keep this tab open. no peeking.</p>
 </section>
 
-<!-- 2. Lock question -->
+<!-- lock -->
 <section id="lock" class="screen" hidden>
   <div class="padlock" aria-hidden="true">
-    <svg viewBox="0 0 64 72" width="56" height="64"><path d="M16 30V20a16 16 0 0 1 32 0v10" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" class="shackle"/><rect x="6" y="30" width="52" height="38" rx="10" fill="currentColor"/><circle cx="32" cy="47" r="5" fill="#efecea"/><rect x="30" y="49" width="4" height="10" rx="2" fill="#efecea"/></svg>
+    <svg viewBox="0 0 64 72" width="54" height="62"><path d="M16 30V20a16 16 0 0 1 32 0v10" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" class="shackle"/><rect x="6" y="30" width="52" height="38" rx="11" fill="currentColor"/><circle cx="32" cy="46" r="5" fill="var(--paper)"/><rect x="30" y="48" width="4" height="10" rx="2" fill="var(--paper)"/></svg>
   </div>
-  <h2 id="lock-q" class="serif"></h2>
+  <p class="eyebrow">one question first</p>
+  <h2 id="lock-q" class="serif lock-q"></h2>
   <div id="lock-options" class="options"></div>
   <p id="lock-msg" class="hand lock-msg" aria-live="polite"></p>
 </section>
 
-<!-- 3. Envelope -->
+<!-- envelope -->
 <section id="envelope" class="screen" hidden>
   <button class="env" id="env-btn" aria-label="Open the envelope">
     <span class="env-back"></span>
     <span class="env-card"><span class="hand">Happy Birthday<small>my Ammarah 🤍</small></span></span>
     <span class="env-front"></span>
     <span class="env-flap"></span>
-    <span class="seal">A</span>
+    <span class="seal"><span>A</span></span>
   </button>
   <p class="hand env-to">for Ammarah</p>
-  <p class="small muted tap-hint">tap to open</p>
+  <p class="tiny muted tap-hint">tap the seal</p>
 </section>
 
-<!-- 4. The actual site -->
 <main id="site" hidden>
 
+  <!-- hero -->
   <header class="hero">
-    <p class="small spaced">12 · 11 · 2005</p>
-    <h1 class="serif">Happy <em>21st</em><br>Birthday,</h1>
-    <p class="hand big-name">Ammarah</p>
-    <figure class="polaroid hero-photo tilt-r">
-      <img src="photos/kid-2.jpg" alt="Little Ammarah">
-    </figure>
-    <p class="scroll-hint small muted">scroll slowly ↓</p>
+    <div class="hero-text">
+      <p class="eyebrow">12 · 11 · 2005 &nbsp;→&nbsp; 12 · 11 · 2026</p>
+      <h1 class="serif hero-title"><span class="line">Happy</span> <span class="line"><em>twenty-first,</em></span></h1>
+      <p class="hand hero-name" id="hero-name">Ammarah</p>
+    </div>
+    <div class="arch-wrap">
+      <span class="big21" aria-hidden="true">21</span>
+      <figure class="arch"><img src="photos/kid-2.jpg" alt="Little Ammarah" data-zoom></figure>
+      <span class="arch-note hand">day one of my favourite person</span>
+    </div>
+    <a class="scroll-cue" href="#ch1"><span></span>scroll</a>
   </header>
 
-  <section class="block">
-    <h2 class="serif">Before I knew you</h2>
-    <p class="sub hand">little Ammarah, causing trouble since 2005</p>
-    <div id="childhood" class="board"></div>
+  <!-- chapter 1 -->
+  <section class="chapter" id="ch1">
+    <div class="ch-head">
+      <p class="eyebrow">chapter one</p>
+      <h2 class="serif">Before I knew you</h2>
+      <p class="hand ch-sub">little Ammarah, causing trouble since 2005</p>
+    </div>
+    <div id="childhood" class="polaroids"></div>
+    <p class="hint">tap any photo to see it bigger</p>
   </section>
 
-  <section class="block">
-    <h2 class="serif">And then she grew up</h2>
-    <p class="sub hand">and became the person I can't stop looking at</p>
-    <div id="now" class="board"></div>
+  <!-- chapter 2 -->
+  <section class="chapter" id="ch2">
+    <div class="ch-head">
+      <p class="eyebrow">chapter two</p>
+      <h2 class="serif">And then she grew up</h2>
+      <p class="hand ch-sub">and became the person I can't stop looking at</p>
+    </div>
+    <div class="deck" id="deck"></div>
+    <p class="hand deck-caption" id="deck-caption" aria-live="polite"></p>
+    <div class="deck-controls">
+      <button class="round" id="deck-prev" aria-label="Previous photo">←</button>
+      <span id="deck-count" class="deck-count"></span>
+      <button class="round" id="deck-next" aria-label="Next photo">→</button>
+    </div>
+    <p class="hint">swipe the photos</p>
   </section>
 
-  <section class="block">
-    <h2 class="serif">A letter</h2>
-    <article class="letter">
-      <p class="hand letter-to">Dear Ammarah,</p>
-      <div id="letter-body"></div>
-      <p class="hand letter-from">— yours, Haseeb</p>
-    </article>
+  <!-- chapter 3: letter -->
+  <section class="chapter dark" id="ch3">
+    <div class="ch-head">
+      <p class="eyebrow">chapter three</p>
+      <h2 class="serif">A letter</h2>
+      <p class="hand ch-sub">read it slowly. i wrote it slowly.</p>
+    </div>
+    <div class="letter-wrap" id="letter-wrap">
+      <button class="letter-closed" id="letter-open">
+        <span class="fold"></span>
+        <span class="seal small"><span>H</span></span>
+        <span class="hand">open my letter</span>
+      </button>
+      <article class="letter" id="letter" hidden>
+        <p class="hand letter-to">Dear Ammarah,</p>
+        <div id="letter-body"></div>
+        <p class="hand letter-from">yours, always<br>Haseeb</p>
+      </article>
+    </div>
   </section>
 
-  <section class="block">
-    <h2 class="serif">21 reasons</h2>
-    <p class="sub hand">one for every year. tap a card.</p>
+  <!-- chapter 4: reasons -->
+  <section class="chapter" id="ch4">
+    <div class="ch-head">
+      <p class="eyebrow">chapter four</p>
+      <h2 class="serif">21 reasons</h2>
+      <p class="hand ch-sub">one for every year. tap to open each one.</p>
+    </div>
+    <div class="progress"><span id="reasons-bar"></span></div>
+    <p class="hand reasons-count" id="reasons-count"></p>
     <div id="reasons" class="reasons"></div>
   </section>
 
-  <section class="block">
-    <h2 class="serif">21 years, in numbers</h2>
-    <p class="sub hand">i did the maths so you don't have to</p>
+  <!-- chapter 5: games -->
+  <section class="chapter" id="ch5">
+    <div class="ch-head">
+      <p class="eyebrow">chapter five</p>
+      <h2 class="serif">Play with me</h2>
+      <p class="hand ch-sub">two tiny games. no pressure. (some pressure.)</p>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-tab="memory" role="tab">Find the pairs</button>
+      <button class="tab" data-tab="quiz" role="tab">How well do you know us?</button>
+    </div>
+    <div class="game" id="game-memory">
+      <div class="memory" id="memory"></div>
+      <p class="game-status" id="memory-status"></p>
+      <button class="link-btn" id="memory-reset">shuffle again</button>
+    </div>
+    <div class="game" id="game-quiz" hidden>
+      <div class="quiz" id="quiz"></div>
+    </div>
+  </section>
+
+  <!-- chapter 6: numbers -->
+  <section class="chapter" id="ch6">
+    <div class="ch-head">
+      <p class="eyebrow">chapter six</p>
+      <h2 class="serif">21 years, in numbers</h2>
+      <p class="hand ch-sub">i did the maths so you don't have to</p>
+    </div>
     <div id="facts" class="facts"></div>
   </section>
 
-  <section class="block cake-block">
-    <h2 class="serif">Make a wish</h2>
-    <p class="sub hand" id="cake-hint">21 candles. tap them out, or blow into your phone.</p>
+  <!-- chapter 7: cake -->
+  <section class="chapter cake-block" id="ch7">
+    <div class="ch-head">
+      <p class="eyebrow">chapter seven</p>
+      <h2 class="serif">Make a wish</h2>
+      <p class="hand ch-sub" id="cake-hint">21 candles. tap them out, or blow on your phone.</p>
+    </div>
     <div class="cake" id="cake">
       <div class="candles" id="candles"></div>
-      <div class="tier top"></div>
-      <div class="tier bottom"></div>
+      <div class="tier top"><span class="drip"></span></div>
+      <div class="tier bottom"><span class="drip"></span><span class="cake-name hand">Ammarah</span></div>
       <div class="plate"></div>
     </div>
     <button class="btn" id="blow-btn">blow 🌬️</button>
     <p class="hand wish-done" id="wish-done" hidden>i hope every single one comes true.</p>
   </section>
 
-  <section class="block ending">
-    <div id="ending-slot"></div>
-    <p class="hand signoff" id="signoff"></p>
-    <p class="small muted">made by hand, by Haseeb, on the night before your birthday.</p>
+  <!-- finale -->
+  <section class="chapter finale" id="ch8">
+    <p class="eyebrow">one last thing</p>
+    <h2 class="serif finale-q" id="finale-q"></h2>
+    <div class="finale-btns" id="finale-btns">
+      <button class="btn" id="yes-btn"></button>
+      <button class="btn ghost" id="no-btn"></button>
+    </div>
+    <div class="finale-after" id="finale-after" hidden>
+      <p class="hand finale-promise" id="finale-promise"></p>
+      <p class="hand signoff" id="signoff"></p>
+      <p class="tiny muted">made by hand, by Haseeb, the night before your birthday.</p>
+    </div>
   </section>
 
 </main>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" id="lb-close" aria-label="Close">×</button>
+  <img id="lb-img" alt="">
+  <p class="hand lb-cap" id="lb-cap"></p>
+</div>
 
 <canvas id="confetti" aria-hidden="true"></canvas>
 

@@ -75,6 +75,31 @@ window.CONTENT = {
     "I love you because I can't stop loving you."
   ],
 
+  // Memory game – 6 photos, each appears twice
+  memory: ["photos/kid-1.jpg","photos/kid-2.jpg","photos/kid-4.jpg","photos/now-1.jpg","photos/now-5.jpg","photos/now-7.jpg"],
+
+  // Little quiz – change questions/answers freely. "correct" is the option number (0, 1, 2…)
+  quiz: [
+    { q: "What do I call you?", options: ["Gugu", "Marah", "Chitti maasi", "All of them"], correct: 3,
+      yes: "All of them. And a hundred more.", no: "Close, but it's all of them." },
+    { q: "Your favourite colour?", options: ["Pink", "Grey", "Lilac", "Green"], correct: 1,
+      yes: "Grey. That's why this whole page is grey.", no: "Ammarah… it's grey. Look around you." },
+    { q: "What can Haseeb not live without?", options: ["Chai", "His phone", "Ammarah"], correct: 2,
+      yes: "Obviously.", no: "Wrong. It's you. It's always you." },
+    { q: "Who loves you the most?", options: ["Haseeb", "Haseeb", "Haseeb"], correct: -1,
+      yes: "Correct, whichever one you picked.", no: "" }
+  ],
+
+  // The last question
+  finale: {
+    question: "Will you let me spend every 12th November with you?",
+    yes: "Yes, forever",
+    no: "No",
+    dodges: ["are you sure?", "think again", "nope, not allowed", "okay fine, this one's a yes too"],
+    after: "Then it's a promise. Every year, for the rest of our lives."
+  },
+
   // Last line on the page
   signoff: "Happy 21st, my Ammarah."
 };
+
